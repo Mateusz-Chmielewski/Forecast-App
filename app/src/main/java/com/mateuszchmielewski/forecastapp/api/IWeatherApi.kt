@@ -9,7 +9,7 @@ import retrofit2.http.Query
 interface IWeatherApi {
 
     @GET("current")
-    fun getCurrentWeatherForCity(
+    suspend fun getCurrentWeatherForCity(
         @Query("query") city: String,
         @Query("language") language: String = "en",
         @Query("units") units: String = "m",
