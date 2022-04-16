@@ -11,8 +11,6 @@ interface IWeatherApi {
     @GET("current")
     suspend fun getCurrentWeatherForCity(
         @Query("query") city: String,
-//        @Query("language") language: String = "en",
-//        @Query("units") units: String = "m",
         @Query("access_key") accessKey: String = API_KEY
     ): Response<CurrentResponse>
 }
