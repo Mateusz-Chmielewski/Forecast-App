@@ -2,4 +2,10 @@
     <string name="app_name">Forecast App</string>
     <string name="city_example">Warsaw</string>
     <string name="get_weather">Get Weather</string>
+
+
+<!-- Error Messages -->
+    <string name="io_exception">Data could not be downloaded. Check internet connection</string>
+    <string name="http_exception">Data could not be downloaded. Unexpected error</string>
+    <string name="null_data_exception">Downloaded data are invalid</string>
 </resources>
