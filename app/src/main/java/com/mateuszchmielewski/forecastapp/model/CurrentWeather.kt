@@ -8,10 +8,10 @@ data class CurrentWeather(
     val observationTime: String,
 
     @SerializedName("temperature")
-    val temperature: Int,
+    val temperature: Double,
 
     @SerializedName("weather_code")
-    val weatherCode: Int,
+    val weatherCode: Double,
 
     @SerializedName("weather_icons")
     val weatherIcons: List<String>,
@@ -20,34 +20,34 @@ data class CurrentWeather(
     val weatherDescriptions: List<String>,
 
     @SerializedName("wind_speed")
-    val windSpeed: Int,
+    val windSpeed: Double,
 
     @SerializedName("wind_degree")
-    val windDegree: Int,
+    val windDegree: Double,
 
     @SerializedName("wind_dir")
     val windDir: String,
 
     @SerializedName("pressure")
-    val pressure: Int,
+    val pressure: Double,
 
     @SerializedName("precip")
-    val precip: Int,
+    val precip: Double,
 
     @SerializedName("humidity")
-    val humidity: Int,
+    val humidity: Double,
 
     @SerializedName("cloudcover")
-    val cloudCover: Int,
+    val cloudCover: Double,
 
     @SerializedName("feelslike")
-    val feelsLike: Int,
+    val feelsLike: Double,
 
     @SerializedName("uv_index")
-    val uvIndex: Int,
+    val uvIndex: Double,
 
     @SerializedName("visibility")
-    val visibility: Int,
+    val visibility: Double,
 
     @SerializedName("is_day")
     val isDay: String

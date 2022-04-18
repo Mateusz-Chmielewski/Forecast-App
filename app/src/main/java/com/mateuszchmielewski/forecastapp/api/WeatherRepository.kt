@@ -2,6 +2,7 @@ package com.mateuszchmielewski.forecastapp.api
 
 import android.content.res.Resources
 import com.mateuszchmielewski.forecastapp.R
+import com.mateuszchmielewski.forecastapp.model.CurrentResponse
 import com.mateuszchmielewski.forecastapp.model.ResponseType
 import retrofit2.HttpException
 import java.io.IOException
@@ -10,7 +11,7 @@ class WeatherRepository {
     private val api = ApiInstance.api
     private val resources = Resources.getSystem()
 
-    suspend fun getCurrentWeatherForCity(city: String): ResponseType {
+    suspend fun getCurrentWeatherForCity(city: String): ResponseType<CurrentResponse> {
         val response = try {
             api.getCurrentWeatherForCity(city)
         } catch (exception: IOException) {

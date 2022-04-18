@@ -5,33 +5,37 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.mateuszchmielewski.forecastapp.R
-import com.mateuszchmielewski.forecastapp.api.ApiInstance
+import com.mateuszchmielewski.forecastapp.api.WeatherRepository
+import com.mateuszchmielewski.forecastapp.model.CurrentResponse
+import com.mateuszchmielewski.forecastapp.model.CurrentWeather
+import com.mateuszchmielewski.forecastapp.model.ResponseType
+import com.mateuszchmielewski.forecastapp.util.makeToast
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.withContext
-
 
 class MainActivity : AppCompatActivity() {
     companion object {
         private const val TAG = "MainActivity"
     }
 
+    private val weatherRepository = WeatherRepository()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        lifecycleScope.launch(Dispatchers.IO) {
-            val response = ApiInstance.api.getCurrentWeatherForCity("Warszawa")
+        btnSubmit.setOnClickListener { getWeatherBtnEvent() }
+    }
 
-            if (response.isSuccessful && response.body() != null) {
-                val body = response.body()!!
-                Log.d(TAG, response.toString())
+    fun getWeatherBtnEvent() = lifecycleScope.launch(Dispatchers.IO) {
+        val city = etCity.text.toString()
 
-                withContext(Dispatchers.Main) {
-                    etCity.setText(body.currentWeather.temperature.toString())
-                }
-            }
+        val response = weatherRepository.getCurrentWeatherForCity(city)
+
+        when (response) {
+            is ResponseType.Error -> Log.d(TAG, response.message)
+            is ResponseType.Success -> Log.d(TAG, "We did it\n" + response.data.toString())
         }
     }
 }
