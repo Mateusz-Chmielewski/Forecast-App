@@ -6,10 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.mateuszchmielewski.forecastapp.R
 import com.mateuszchmielewski.forecastapp.api.WeatherRepository
-import com.mateuszchmielewski.forecastapp.model.CurrentResponse
-import com.mateuszchmielewski.forecastapp.model.CurrentWeather
 import com.mateuszchmielewski.forecastapp.model.ResponseType
-import com.mateuszchmielewski.forecastapp.util.makeToast
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.android.synthetic.main.activity_main.*

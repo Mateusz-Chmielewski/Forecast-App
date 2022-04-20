@@ -1,6 +1,7 @@
 package com.mateuszchmielewski.forecastapp.util
 
 object ApiSettings {
-    const val API_KEY = "dfb0a5f24fe053ff58bc0bfe365fbd27"
-    const val BASE_URL = "http://api.weatherstack.com/"
+    const val API_KEY = "a6f7f16a23c9cd0a4991f1c4949e7814"
+    const val BASE_URL = "https://api.openweathermap.org/data/2.5/"
+    const val DEFAULT_UNITS = "metric"
 }
