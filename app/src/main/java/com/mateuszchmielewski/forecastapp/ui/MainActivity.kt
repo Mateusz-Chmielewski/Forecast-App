@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         btnSubmit.setOnClickListener { getWeatherBtnEvent() }
     }
 
-    fun getWeatherBtnEvent() = lifecycleScope.launch(Dispatchers.IO) {
+    private fun getWeatherBtnEvent() = lifecycleScope.launch(Dispatchers.IO) {
         val city = etCity.text.toString()
 
         val response = weatherRepository.getCurrentWeatherForCity(city)
