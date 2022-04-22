@@ -1,5 +1,6 @@
 package com.mateuszchmielewski.forecastapp.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -32,7 +33,10 @@ class MainActivity : AppCompatActivity() {
 
         when (response) {
             is ResponseType.Error -> Log.d(TAG, response.message)
-            is ResponseType.Success -> Log.d(TAG, "We did it\n" + response.data.toString())
+            is ResponseType.Success -> {
+                Log.d(TAG, "We did it\n" + response.data.toString())
+                Intent(applicationContext, WeatherActivity::class.java).also { startActivity(it) }
+            }
         }
     }
 }
