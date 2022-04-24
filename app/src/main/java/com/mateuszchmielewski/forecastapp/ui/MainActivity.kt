@@ -32,10 +32,12 @@ class MainActivity : AppCompatActivity() {
         val response = weatherRepository.getCurrentWeatherForCity(city)
 
         when (response) {
-            is ResponseType.Error -> Log.d(TAG, response.message)
+            is ResponseType.Error -> Log.e(TAG, response.message)
             is ResponseType.Success -> {
-                Log.d(TAG, "We did it\n" + response.data.toString())
-                Intent(applicationContext, WeatherActivity::class.java).also { startActivity(it) }
+                Intent(applicationContext, WeatherActivity::class.java).also {
+                    it.putExtra("CITY", response.data)
+                    startActivity(it)
+                }
             }
         }
     }
