@@ -1,15 +1,13 @@
-package com.mateuszchmielewski.forecastapp.model
+package com.mateuszchmielewski.forecastapp.data.api
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
-import java.text.SimpleDateFormat
 import java.time.Instant
 import java.time.format.DateTimeFormatter
-import java.util.*
 
-data class CurrentResponse(
+data class CurrentWeatherDto(
     @SerializedName("name") val cityName: String,
-    @SerializedName("coord") val coordinates: Coordinates,
+    @SerializedName("coord") val coordinates: CoordinatesDto,
     @SerializedName("visibility") val visibility: Int,
     @SerializedName("dt") val time: Long,
     @SerializedName("timezone") val timeZoneOffset: Int,

@@ -1,6 +1,5 @@
 package com.mateuszchmielewski.forecastapp.data.api
 
-import com.mateuszchmielewski.forecastapp.model.CurrentResponse
 import com.mateuszchmielewski.forecastapp.util.ApiSettings.API_KEY
 import com.mateuszchmielewski.forecastapp.util.ApiSettings.DEFAULT_UNITS
 import retrofit2.Response
@@ -14,5 +13,5 @@ interface IWeatherApi {
         @Query("q") city: String,
         @Query("units") units: String = DEFAULT_UNITS,
         @Query("appid") accessKey: String = API_KEY
-    ): Response<CurrentResponse>
+    ): Response<CurrentWeatherDto>
 }
