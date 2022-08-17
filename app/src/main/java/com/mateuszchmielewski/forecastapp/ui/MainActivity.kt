@@ -6,7 +6,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.mateuszchmielewski.forecastapp.R
-import com.mateuszchmielewski.forecastapp.api.WeatherRepository
+import com.mateuszchmielewski.forecastapp.data.repository.WeatherRepository
 import com.mateuszchmielewski.forecastapp.model.ResponseType
 import com.mateuszchmielewski.forecastapp.util.makeToast
 import kotlinx.coroutines.Dispatchers

@@ -1,10 +1,11 @@
-package com.mateuszchmielewski.forecastapp.api
+package com.mateuszchmielewski.forecastapp.data.repository
 
 import android.content.res.Resources
 import com.mateuszchmielewski.forecastapp.R
+import com.mateuszchmielewski.forecastapp.data.api.ApiInstance
 import com.mateuszchmielewski.forecastapp.model.CurrentResponse
 import com.mateuszchmielewski.forecastapp.model.ResponseType
-import retrofit2.HttpException
+import kotlinx.coroutines.CancellationException
 import java.io.IOException
 
 class WeatherRepository {
@@ -16,7 +17,11 @@ class WeatherRepository {
             api.getCurrentWeatherForCity(city)
         } catch (exception: IOException) {
             return ResponseType.Error(resources.getString(R.string.io_exception))
-        } catch (exception: HttpException) {
+        } catch (exception: Exception) {
+            if (exception is CancellationException) {
+                throw CancellationException(exception.message)
+            }
+
             return ResponseType.Error(resources.getString(R.string.http_exception))
         }
 

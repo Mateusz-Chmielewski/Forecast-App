@@ -1,4 +1,4 @@
-package com.mateuszchmielewski.forecastapp.api
+package com.mateuszchmielewski.forecastapp.data.api
 
 import com.mateuszchmielewski.forecastapp.util.ApiSettings.BASE_URL
 import retrofit2.Retrofit

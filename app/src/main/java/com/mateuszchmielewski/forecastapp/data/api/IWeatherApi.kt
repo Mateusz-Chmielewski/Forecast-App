@@ -1,4 +1,4 @@
-package com.mateuszchmielewski.forecastapp.api
+package com.mateuszchmielewski.forecastapp.data.api
 
 import com.mateuszchmielewski.forecastapp.model.CurrentResponse
 import com.mateuszchmielewski.forecastapp.util.ApiSettings.API_KEY
