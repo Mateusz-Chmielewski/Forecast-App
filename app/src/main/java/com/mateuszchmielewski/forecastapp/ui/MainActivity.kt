@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.mateuszchmielewski.forecastapp.R
 import com.mateuszchmielewski.forecastapp.data.repository.WeatherRepository
-import com.mateuszchmielewski.forecastapp.model.ResponseType
+import com.mateuszchmielewski.forecastapp.domain.util.Resource
 import com.mateuszchmielewski.forecastapp.util.makeToast
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -33,12 +33,12 @@ class MainActivity : AppCompatActivity() {
         val response = weatherRepository.getCurrentWeatherForCity(city)
 
         when (response) {
-            is ResponseType.Error -> {
+            is Resource.Error -> {
                 Log.e(TAG, response.message)
                 makeToast(response.message)
             }
 
-            is ResponseType.Success -> {
+            is Resource.Success -> {
                 Intent(applicationContext, WeatherActivity::class.java).also {
                     it.putExtra("CITY", response.data)
                     startActivity(it)
