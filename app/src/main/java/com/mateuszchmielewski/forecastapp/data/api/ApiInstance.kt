@@ -1,6 +1,6 @@
 package com.mateuszchmielewski.forecastapp.data.api
 
-import com.mateuszchmielewski.forecastapp.util.ApiSettings.BASE_URL
+import com.mateuszchmielewski.forecastapp.data.api.ApiSettings.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

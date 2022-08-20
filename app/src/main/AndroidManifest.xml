@@ -13,12 +13,12 @@
         android:theme="@style/Theme.ForecastApp"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".ui.WeatherActivity"
+            android:name="com.mateuszchmielewski.forecastapp.presentation.ui.WeatherActivity"
             android:exported="false"
             android:label="@string/title_activity_weather"
             android:theme="@style/Theme.ForecastApp.NoActionBar" />
         <activity
-            android:name=".ui.MainActivity"
+            android:name="com.mateuszchmielewski.forecastapp.presentation.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

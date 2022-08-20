@@ -1,4 +1,4 @@
-package com.mateuszchmielewski.forecastapp.ui
+package com.mateuszchmielewski.forecastapp.presentation.ui
 
 import android.content.Intent
 import android.os.Bundle

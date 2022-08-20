@@ -1,7 +1,7 @@
 package com.mateuszchmielewski.forecastapp.data.api
 
-import com.mateuszchmielewski.forecastapp.util.ApiSettings.API_KEY
-import com.mateuszchmielewski.forecastapp.util.ApiSettings.DEFAULT_UNITS
+import com.mateuszchmielewski.forecastapp.data.api.ApiSettings.API_KEY
+import com.mateuszchmielewski.forecastapp.data.api.ApiSettings.DEFAULT_UNITS
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
