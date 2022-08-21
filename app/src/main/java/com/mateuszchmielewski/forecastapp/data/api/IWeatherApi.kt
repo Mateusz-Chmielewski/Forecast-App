@@ -14,4 +14,6 @@ interface IWeatherApi {
         @Query("units") units: String = DEFAULT_UNITS,
         @Query("appid") accessKey: String = API_KEY
     ): Response<CurrentWeatherDto>
+
+    //TODO: Add one for all call
 }

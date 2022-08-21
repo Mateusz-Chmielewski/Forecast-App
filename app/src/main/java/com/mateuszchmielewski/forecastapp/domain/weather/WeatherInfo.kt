@@ -4,4 +4,5 @@ data class WeatherInfo(
     val cityName: String,
     val visibility: Int,
     val localTime: String
+    //TODO: Extend model
 )
