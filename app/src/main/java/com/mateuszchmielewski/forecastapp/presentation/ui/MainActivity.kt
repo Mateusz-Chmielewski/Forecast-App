@@ -28,22 +28,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getWeatherBtnEvent() = lifecycleScope.launch(Dispatchers.IO) {
-        val city = etCity.text.toString()
-
-        val response = weatherRepository.getCurrentWeatherForCity(city)
-
-        when (response) {
-            is Resource.Error -> {
-                Log.e(TAG, response.message)
-                makeToast(response.message)
-            }
-
-            is Resource.Success -> {
-                Intent(applicationContext, WeatherActivity::class.java).also {
-                    it.putExtra("CITY", response.data)
-                    startActivity(it)
-                }
-            }
-        }
+//        val city = etCity.text.toString()
+//
+//        val response = weatherRepository.getCurrentWeatherForCity(city)
+//
+//        when (response) {
+//            is Resource.Error -> {
+//                Log.e(TAG, response.message)
+//                makeToast(response.message)
+//            }
+//
+//            is Resource.Success -> {
+//                Intent(applicationContext, WeatherActivity::class.java).also {
+//                    it.putExtra("CITY", response.data)
+//                    startActivity(it)
+//                }
+//            }
+//        }
     }
 }

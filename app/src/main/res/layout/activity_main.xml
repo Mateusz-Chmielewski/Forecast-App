@@ -1,31 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.ui.MainActivity">
 
-    <EditText
-        android:id="@+id/etCity"
-        android:layout_width="160dp"
+    <ImageView
+        android:id="@+id/ivBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@color/cardview_dark_background" />
+
+    <TextView
+        android:id="@+id/tvCityName"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/city_example"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:inputType="text" />
+        android:text="@string/default_city_name_value"
+        android:textAlignment="center"
+        android:textColor="@color/white" />
 
-    <Button
-        android:id="@+id/btnSubmit"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/llSearchArea"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/get_weather"
-        app:layout_constraintEnd_toEndOf="@+id/etCity"
-        app:layout_constraintStart_toStartOf="@+id/etCity"
-        app:layout_constraintTop_toBottomOf="@+id/etCity" />
+        android:orientation="horizontal"
+        android:layout_below="@+id/tvCityName">
+
+        <EditText
+            android:id="@+id/etCity"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/city_example"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/get_weather"
+            app:layout_constraintEnd_toEndOf="@+id/etCity"
+            app:layout_constraintStart_toStartOf="@+id/etCity"
+            app:layout_constraintTop_toBottomOf="@+id/etCity" />
+    </LinearLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
