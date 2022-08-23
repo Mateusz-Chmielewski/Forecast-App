@@ -16,32 +16,41 @@
         android:id="@+id/tvCityName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:padding="16dp"
         android:text="@string/default_city_name_value"
         android:textAlignment="center"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:textSize="18sp" />
 
     <LinearLayout
         android:id="@+id/llSearchArea"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_below="@+id/tvCityName">
 
-        <EditText
-            android:id="@+id/etCity"
-            android:layout_width="160dp"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilSearchArea"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@android:color/transparent"
             android:hint="@string/city_example"
-            android:inputType="text" />
+            android:padding="4dp"
+            android:textColorHint="@color/white"
+            app:hintTextColor="@color/white">
 
-        <Button
-            android:id="@+id/btnSubmit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/get_weather"
-            app:layout_constraintEnd_toEndOf="@+id/etCity"
-            app:layout_constraintStart_toStartOf="@+id/etCity"
-            app:layout_constraintTop_toBottomOf="@+id/etCity" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tietSearchingCity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textSize="14sp"
+                android:textColor="@color/white"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
 
