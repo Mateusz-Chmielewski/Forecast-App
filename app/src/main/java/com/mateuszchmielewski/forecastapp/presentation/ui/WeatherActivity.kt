@@ -14,18 +14,18 @@ class WeatherActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        binding = ActivityWeatherBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        city = intent.getSerializableExtra("CITY") as CurrentWeatherDto
-
-
-        setSupportActionBar(findViewById(R.id.toolbar))
-        binding.toolbarLayout.title = city.cityName
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, city.localTime, Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+//
+//        binding = ActivityWeatherBinding.inflate(layoutInflater)
+//        setContentView(binding.root)
+//
+//        city = intent.getSerializableExtra("CITY") as CurrentWeatherDto
+//
+//
+//        setSupportActionBar(findViewById(R.id.toolbar))
+//        binding.toolbarLayout.title = city.cityName
+//        binding.fab.setOnClickListener { view ->
+//            Snackbar.make(view, city.localTime, Snackbar.LENGTH_LONG)
+//                .setAction("Action", null).show()
+//        }
     }
 }

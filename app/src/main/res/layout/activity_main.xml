@@ -10,7 +10,7 @@
         android:id="@+id/ivBackground"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@color/cardview_dark_background" />
+        android:src="@color/grey" />
 
     <TextView
         android:id="@+id/tvCityName"
@@ -27,15 +27,17 @@
         android:id="@+id/llSearchArea"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvCityName">
+        android:layout_below="@+id/tvCityName"
+        android:orientation="horizontal"
+        tools:ignore="ExtraText">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilSearchArea"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="4.5"
             android:layout_margin="8dp"
             android:background="@android:color/transparent"
-            android:hint="@string/city_example"
             android:padding="4dp"
             android:textColorHint="@color/white"
             app:hintTextColor="@color/white">
@@ -45,12 +47,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
+                android:hint="@string/city_example"
                 android:inputType="text"
                 android:singleLine="true"
-                android:textSize="14sp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:textSize="14sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/ivSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_search" />
+
     </LinearLayout>
 
 

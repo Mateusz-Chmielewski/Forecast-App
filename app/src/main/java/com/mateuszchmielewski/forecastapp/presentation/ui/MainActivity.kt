@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btnSubmit.setOnClickListener { getWeatherBtnEvent() }
+//        btnSubmit.setOnClickListener { getWeatherBtnEvent() }
     }
 
     private fun getWeatherBtnEvent() = lifecycleScope.launch(Dispatchers.IO) {
