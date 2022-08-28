@@ -15,5 +15,11 @@ interface IWeatherApi {
         @Query("appid") accessKey: String = API_KEY
     ): Response<CurrentWeatherDto>
 
-    //TODO: Add one for all call
+    @GET("onecall")
+    suspend fun getWeatherOneCall(
+        @Query("lat") latitude: String,
+        @Query("long") longitude: String,
+        @Query("units") units: String = DEFAULT_UNITS,
+        @Query("appid") accessKey: String = API_KEY
+    ): Response<OneCallDto>
 }
