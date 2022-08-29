@@ -72,7 +72,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/llSearchArea"
-        android:layout_margin="12dp"
+        android:layout_margin="@dimen/current_weather_margin"
         android:gravity="center_horizontal"
         android:padding="4dp"
         android:text="31"
@@ -85,7 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/tvCurrentTemperature"
-        android:layout_margin="10dp"/>
+        android:layout_margin="@dimen/current_weather_margin"/>
 
     <TextView
         android:id="@+id/tvCurrentWeatherDescription"
@@ -94,6 +94,7 @@
         android:layout_below="@+id/ivCurrentWeatherIcon"
         android:gravity="center"
         android:textAlignment="center"
+        android:layout_marginHorizontal="@dimen/current_weather_margin"
         android:text="Foggy"
         android:textColor="@color/white" />
 
